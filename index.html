@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Claude en clair</title>
+  <meta name="description" content="Le guide pour bien travailler avec Claude, sans jargon.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ECEFE8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141815" media="(prefers-color-scheme: dark)">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Claude en clair">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preload" href="fonts/dmsans-latin.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/content.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="barre">
+    <nav class="barre-in" aria-label="Navigation">
+      <a class="pastille retour" id="retour" href="#/" hidden>
+        <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 6l-6 6 6 6"/></svg>
+        <span id="retour-texte">Accueil</span>
+      </a>
+      <a class="pastille lien-lexique" id="lien-lexique" href="#/lexique">
+        <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 6.6C10.3 5.3 7.9 4.7 4 4.9v13.2c3.9-.2 6.3.4 8 1.7 1.7-1.3 4.1-1.9 8-1.7V4.9c-3.9-.2-6.3.4-8 1.7z"/><path d="M12 6.6v13.2"/></svg>
+        <span>Lexique</span>
+      </a>
+    </nav>
+  </header>
+
+  <main id="ecran" tabindex="-1"></main>
+
+  <noscript><p class="sans-js">Ce guide a besoin de JavaScript pour s’afficher. Activez-le dans votre navigateur, puis rechargez la page.</p></noscript>
+
+  <div class="voile" data-fermer hidden></div>
+  <section class="feuille" id="feuille" role="dialog" aria-modal="true" aria-labelledby="feuille-titre" aria-describedby="feuille-texte" hidden>
+    <span class="poignee" aria-hidden="true"></span>
+    <h2 class="feuille-titre" id="feuille-titre"></h2>
+    <p class="feuille-texte" id="feuille-texte"></p>
+    <div class="feuille-actions">
+      <a class="bouton bouton-discret" id="feuille-lien" href="#/lexique">Tout le lexique</a>
+      <button type="button" class="bouton bouton-plein" id="feuille-fermer" data-fermer>Compris</button>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
